@@ -1,0 +1,4 @@
+Host tttest
+ProxyCommand tt-connect QBZF2LI-W6DYH66-LFP4XPY-FQTUIT6-5SQZULY-XGN5UH5-4G5C4N3-HJXCGQC
+ProxyUseFdpass yes
+ServerAliveInterval 60

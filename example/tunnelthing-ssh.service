@@ -1,0 +1,31 @@
+[Service]
+ExecStartPre=/usr/local/bin/tt-gencert
+ExecStart=/usr/local/bin/tt-listen tcp 127.0.0.1:22
+StateDirectory=tunnelthing-ssh
+WorkingDirectory=/var/lib/tunnelthing-ssh
+
+# Hardening
+CapabilityBoundingSet=
+DevicePolicy=closed
+DynamicUser=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+PrivateIPC=yes
+PrivateDevices=yes
+PrivateUsers=yes
+ProcSubset=pid
+ProtectClock=yes
+ProtectControlGroups=yes
+ProtectHome=yes
+ProtectHostname=yes
+ProtectKernelLogs=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+ProtectProc=invisible
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=yes
+RestrictRealtime=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallFilter=~@privileged
+UMask=0066
